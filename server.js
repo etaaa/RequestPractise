@@ -8,24 +8,30 @@ app.disable('x-powered-by');
 const port = process.env.PORT || 3000
 
 
-// INVOLVE ROUTES
-const formDataRouter = require('./routes/formData')
-const homepageRouter = require('./routes/homepage')
-const ipAddressRouter = require('./routes/ipAddress')
-const jsonRouter = require('./routes/json')
-const queryParamsRouter = require('./routes/queryParams')
-const redirectRouter = require('./routes/redirect')
-const userAgentRouter = require('./routes/userAgent')
+// GET ROUTES
+const countryRouter = require('./routes/get/country')
+const homepageRouter = require('./routes/get/homepage')
+const ipAddressRouter = require('./routes/get/ipAddress')
+const queryParamsRouter = require('./routes/get/queryParams')
+const redirectRouter = require('./routes/get/redirect')
+const userAgentRouter = require('./routes/get/userAgent')
+
+
+// POST ROUTES
+const formDataRouter = require('./routes/post/formData')
+const jsonRouter = require('./routes/post/json')
 
 
 // USE THE ROUTERS
-app.use('/formData', formDataRouter)
+app.use('/country', countryRouter)
 app.use('/', homepageRouter)
 app.use('/ipAddress', ipAddressRouter)
-app.use('/json', jsonRouter)
 app.use('/queryParams', queryParamsRouter)
 app.use('/redirect', redirectRouter)
 app.use('/userAgent', userAgentRouter)
+
+app.use('/formData', formDataRouter)
+app.use('/json', jsonRouter)
 
 
 // LAUNCH APP

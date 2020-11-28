@@ -4,11 +4,11 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
     try {
-        const user_agent = req.get('user-agent')
-        res.send(user_agent)
+        const ip_address = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        res.send(ip_address)
     }
     catch {
-        res.send(404)
+        res.send(400)
     }
 })
 

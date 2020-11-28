@@ -14,7 +14,7 @@ router.get('/:url(*)', (req, res) => {
         }
     }
     catch {
-        res.send(404)
+        res.send(400)
     }
 })
 

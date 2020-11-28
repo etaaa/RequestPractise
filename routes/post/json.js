@@ -3,7 +3,7 @@ const router = express.Router()
 const bodyParser = require('body-parser')
 
 
-router.get('/', bodyParser.json(), (req, res) => {
+router.post('/', bodyParser.json(), (req, res) => {
     try {
         const json = req.body
         if (Object.keys(json).length >= 1) {
@@ -14,7 +14,7 @@ router.get('/', bodyParser.json(), (req, res) => {
         }
     }
     catch {
-        res.send(404)
+        res.send(400)
     }
 })
 

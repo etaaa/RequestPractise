@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
         res.send(queryParams)
     }
     catch {
-        res.send(404)
+        res.send(400)
     }
 })
 
