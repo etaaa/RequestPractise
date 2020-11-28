@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 
 // CONFIGURATIONS
 app.disable('x-powered-by');
-const port = process.env.PORT || 3000
+const port = 3000
 
 
 // GET ROUTES
