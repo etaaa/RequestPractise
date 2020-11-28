@@ -3,7 +3,7 @@ const router = express.Router()
 
 
 router.get('/', (req, res) => {
-    res.redirect("https://twitter.com/etacph")
+    res.redirect("https://github.com/etaaa/RequestPractise")
 })
 
 

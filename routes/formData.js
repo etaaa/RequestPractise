@@ -8,7 +8,8 @@ router.get('/', bodyParser.urlencoded({ extended: true }), (req, res) => {
         const formData = req.body
         if (Object.keys(formData).length >= 1) {
             res.send(formData)
-        } else {
+        } 
+        else {
             res.send("No form data in payload")
         }
     }

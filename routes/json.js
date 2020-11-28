@@ -8,7 +8,8 @@ router.get('/', bodyParser.json(), (req, res) => {
         const json = req.body
         if (Object.keys(json).length >= 1) {
             res.send(json)
-        } else {
+        }
+        else {
             res.send("No JSON in payload")
         }
     }

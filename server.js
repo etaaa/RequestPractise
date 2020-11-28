@@ -14,6 +14,7 @@ const homepageRouter = require('./routes/homepage')
 const ipAddressRouter = require('./routes/ipAddress')
 const jsonRouter = require('./routes/json')
 const queryParamsRouter = require('./routes/queryParams')
+const redirectRouter = require('./routes/redirect')
 const userAgentRouter = require('./routes/userAgent')
 
 
@@ -23,6 +24,7 @@ app.use('/', homepageRouter)
 app.use('/ipAddress', ipAddressRouter)
 app.use('/json', jsonRouter)
 app.use('/queryParams', queryParamsRouter)
+app.use('/redirect', redirectRouter)
 app.use('/userAgent', userAgentRouter)
 
 
