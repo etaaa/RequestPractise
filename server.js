@@ -1,11 +1,10 @@
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
 
 
 // CONFIGURATIONS
-app.disable('x-powered-by');
 const port = 3000
+app.disable('x-powered-by');
 
 
 // GET ROUTES
