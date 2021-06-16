@@ -3,20 +3,15 @@ const router = express.Router()
 const bodyParser = require('body-parser')
 
 
-router.post('/', bodyParser.urlencoded({ extended: true }), (req, res) => {
+module.exports = router.post('/', bodyParser.urlencoded({ extended: true }), (req, res) => {
     try {
         const formData = req.body
         if (Object.keys(formData).length >= 1) {
             res.send(formData)
-        } 
-        else {
+        } else {
             res.send("No form data in payload")
         }
-    }
-    catch {
-        res.send(400)
+    } catch {
+        res.sendStatus(500)
     }
 })
-
-
-module.exports = router

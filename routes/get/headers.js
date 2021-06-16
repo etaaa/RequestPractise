@@ -3,5 +3,5 @@ const router = express.Router()
 
 
 module.exports = router.get('/', (req, res) => {
-    res.send(req.query)
+    res.send(req.headers)
 })

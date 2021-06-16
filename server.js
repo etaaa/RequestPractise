@@ -9,7 +9,7 @@ app.disable('x-powered-by');
 
 // GET ROUTES
 const countryRouter = require('./routes/get/country')
-const homepageRouter = require('./routes/get/homepage')
+const headersRouter = require('./routes/get/headers')
 const ipAddressRouter = require('./routes/get/ipAddress')
 const queryParamsRouter = require('./routes/get/queryParams')
 const redirectRouter = require('./routes/get/redirect')
@@ -23,7 +23,7 @@ const jsonRouter = require('./routes/post/json')
 
 // USE THE ROUTERS
 app.use('/country', countryRouter)
-app.use('/', homepageRouter)
+app.use('/headers', headersRouter)
 app.use('/ipAddress', ipAddressRouter)
 app.use('/queryParams', queryParamsRouter)
 app.use('/redirect', redirectRouter)

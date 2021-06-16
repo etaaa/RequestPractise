@@ -1,22 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const validUrl = require('valid-url');
 
 
-router.get('/:url(*)', (req, res) => {
+module.exports = router.get('/:url(*)', (req, res) => {
     try {
-        const url = req.params.url
-        if (validUrl.isUri(url)) {
-            res.redirect(url)
-        }
-        else {
-            res.send("Invalid URL scheme provided")
-        }
+        const url = new URL(req.params.url)
+        res.redirect(url)
     }
     catch {
-        res.send(400)
+        res.send("Invalid URL scheme provided")
     }
 })
-
-
-module.exports = router

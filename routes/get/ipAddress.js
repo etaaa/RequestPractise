@@ -2,15 +2,12 @@ const express = require('express')
 const router = express.Router()
 
 
-router.get('/', (req, res) => {
+module.exports = router.get('/', (req, res) => {
     try {
-        const ip_address = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-        res.send(ip_address)
+        const ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        res.send(ipAddress)
     }
     catch {
-        res.send(400)
+        res.sendStatus(500)
     }
 })
-
-
-module.exports = router

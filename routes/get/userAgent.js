@@ -2,15 +2,12 @@ const express = require('express')
 const router = express.Router()
 
 
-router.get('/', (req, res) => {
+module.exports = router.get('/', (req, res) => {
     try {
-        const user_agent = req.get('user-agent')
-        res.send(user_agent)
+        const userAgent = req.get('User-Agent')
+        res.send(userAgent)
     }
     catch {
-        res.send(400)
+        res.sendStatus(500)
     }
 })
-
-
-module.exports = router
