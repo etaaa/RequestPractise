@@ -1,13 +1,12 @@
-# RequestPractise
+# RequestsPractise
 
-A simple repository in Node.js to get started with requests.
-You have to setup the server on your own machine, although I'm planning to publish this on a server. Made with ♡ by [eta](https://twitter.com/etacph)
+A simple repository in node.js to get started with requests and Express.js
 
 
-# API documentation:
+## Documentation:
 
-## GET /country
--> Returns country of IP-Address
+### GET /country
+Returns the client's country by IP-Address
 
 Example:
 ```
@@ -15,8 +14,8 @@ http://localhost:3000/country
 ```
 
 
-## GET /ipAddress
--> Returns IP-Address
+### GET /headers
+Returns an object of the sent headers
 
 Example:
 ```
@@ -24,8 +23,17 @@ http://localhost:3000/ipAddress
 ```
 
 
-## GET /queryParams
--> Returns all query params
+### GET /ipAddress
+Returns the client's IP-Address
+
+Example:
+```
+http://localhost:3000/ipAddress
+```
+
+
+### GET /queryParams
+Returns all query params
 
 Example:
 ```
@@ -34,18 +42,17 @@ http://localhost:3000/queryParams?apple=1&banana=3
 Query params: Anything
 
 
-## GET /redirect/{URL}
--> Redirects to given URL
+### GET /redirect/{URL}
+Redirects to given URL
 
 Example:
 ```
-http://localhost:3000/redirect/https://twitter.com/etacph
+http://localhost:3000/redirect/https://twitter.com/eterdev
 ```
-URL: Any valid URL
 
 
-## GET /userAgent
--> Returns request User-Agent
+### GET /userAgent
+Returns the client's User-Agent
 
 Example:
 ```
@@ -53,21 +60,19 @@ http://localhost:3000/userAgent
 ```
 
 
-## POST /formData
--> Returns all form data in payload
+### POST /formData
+Returns the form data posted to the server
 
 Example:
 ```
 http://localhost:3000/formData, body={ "apple": 1, "banana": 3 }
 ```
-Form data: Anything
 
 
-## POST /json
--> Returns all objects in JSON payload
+### POST /json
+Returns the json data posted to the server
 
 Example:
 ```
 http://localhost:3000/formData, json={ "apple": 1, "banana": 3 }
 ```
-JSON: Anything
